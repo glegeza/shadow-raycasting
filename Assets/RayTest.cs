@@ -39,10 +39,13 @@ public class RayTest : MonoBehaviour
                 if (hit)
                 {
                     hit = Physics2D.Raycast(hit.point + dir * 0.01f, dir);
+                    Gizmos.color = Color.red;
+                    Gizmos.DrawSphere(hit.point, 0.05f);
                     if (hit)
                     {
                         Gizmos.color = Color.red;
                         Gizmos.DrawLine(transform.position, hit.point);
+                        Gizmos.DrawSphere(hit.point, 0.05f);
                     }
                     else
                     {
